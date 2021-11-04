@@ -1,6 +1,7 @@
 package com.bridgelabz.demo.controlller;
 
 
+import com.bridgelabz.demo.model.User;
 import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
@@ -25,4 +26,10 @@ public class RestController {
     public String sayHelloPara(@PathVariable String name) {
         return "Hello " + name + " From Bridgelabz";
     }
+
+    @PostMapping("/post")
+    public String sayHello(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
+    }
+
 }
